@@ -1,7 +1,12 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import {
   ScrollView,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import {
   TouchableHighlight,
   TouchableOpacity,
 } from "react-native-gesture-handler";
@@ -178,6 +183,130 @@ export default function HomeScreen() {
               {/* end of Dine in button */}
             </View>
           </View>
+          {/* Your Restaurants */}
+          <View style={{ marginBottom: 15 }}>
+            <Text
+              style={{ fontSize: 20, fontWeight: "bold", marginBottom: 15 }}
+            >
+              Your Restaurants
+            </Text>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <View
+                style={{
+                  width: "80%",
+                  flex: 1,
+                  flexDirection: "row",
+                }}
+              >
+                <ImageBackground
+                  style={{
+                    width: 250,
+                    height: 150,
+                    borderRadius: 15,
+                    overflow: "hidden",
+                    borderWidth: 0.5,
+                    marginRight: 15,
+                  }}
+                  source={require("../assets/home-your-restaurants/burger-king.jpg")}
+                >
+                  <View
+                    style={{
+                      position: "absolute",
+                      bottom: 10,
+                      left: 15,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        color: "black",
+                        fontWeight: "bold",
+                        borderWidth: 1,
+                        backgroundColor: "white",
+                        borderRadius: 15,
+                        width: 60,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      25 min
+                    </Text>
+                  </View>
+                </ImageBackground>
+                <ImageBackground
+                  style={{
+                    width: 250,
+                    height: 150,
+                    borderRadius: 15,
+                    overflow: "hidden",
+                    borderWidth: 0.5,
+                    marginRight: 15,
+                  }}
+                  source={require("../assets/home-your-restaurants/jollibee.jpg")}
+                >
+                  <View
+                    style={{
+                      position: "absolute",
+                      bottom: 10,
+                      left: 15,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        color: "black",
+                        fontWeight: "bold",
+                        borderWidth: 1,
+                        backgroundColor: "white",
+                        borderRadius: 15,
+                        width: 60,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      25 min
+                    </Text>
+                  </View>
+                </ImageBackground>
+                <ImageBackground
+                  style={{
+                    width: 250,
+                    height: 150,
+                    borderRadius: 15,
+                    overflow: "hidden",
+                    borderWidth: 0.5,
+                    marginRight: 15,
+                  }}
+                  source={require("../assets/home-your-restaurants/mcdo.jpg")}
+                >
+                  <View
+                    style={{
+                      position: "absolute",
+                      bottom: 10,
+                      left: 15,
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 13,
+                        color: "black",
+                        fontWeight: "bold",
+                        borderWidth: 1,
+                        backgroundColor: "white",
+                        borderRadius: 15,
+                        width: 60,
+                        paddingLeft: 8,
+                      }}
+                    >
+                      25 min
+                    </Text>
+                  </View>
+                </ImageBackground>
+              </View>
+            </ScrollView>
+          </View>
+          {/* End of Your Restaurants */}
         </View>
       </ScrollView>
     </>
