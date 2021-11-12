@@ -10,6 +10,7 @@ import {
   TouchableHighlight,
   TouchableOpacity,
 } from "react-native-gesture-handler";
+import Searchbar from "../components/Searchbar";
 
 export default function HomeScreen() {
   const yourRestaurantHome = [
@@ -51,11 +52,13 @@ export default function HomeScreen() {
       <ScrollView>
         <View
           style={{
-            paddingTop: 15,
+            //paddingTop: 5,
             width: "90%",
             alignSelf: "center",
           }}
         >
+          {/* Search bar */}
+          <Searchbar />
           {/* start of food delivery button */}
           <TouchableOpacity>
             <ImageBackground

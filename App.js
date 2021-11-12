@@ -42,9 +42,7 @@ export default function App() {
       ) : (
         <>
           <View>
-            <ScrollView>
-              <HeaderNav />
-            </ScrollView>
+            <HeaderNav />
           </View>
           <NavigationContainer theme={MyTheme}>
             <BottonNav />

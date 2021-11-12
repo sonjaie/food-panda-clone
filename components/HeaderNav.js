@@ -1,8 +1,7 @@
 //import dependencies
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Header } from "react-native-elements";
-import { SearchBar } from "react-native-elements";
+import { Header, SearchBar } from "react-native-elements";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
@@ -43,9 +42,6 @@ function rightComponent() {
 }
 
 export default function HeaderNav() {
-  const [search, setsearch] = useState("");
-  const onChangeSearch = (query) => setsearch(query);
-
   return (
     <>
       <View>
@@ -61,7 +57,7 @@ export default function HeaderNav() {
             },
 
             elevation: 6,
-            marginBottom: 15,
+            marginBottom: 2,
           }}
           backgroundColor="white"
           placement="left"
@@ -75,31 +71,6 @@ export default function HeaderNav() {
             text: centerComponent(),
           }}
           rightComponent={{ text: rightComponent() }}
-        />
-      </View>
-      <View>
-        <SearchBar
-          inputStyle={{
-            backgroundColor: "transparent",
-            color: "black",
-            fontSize: 15,
-          }}
-          containerStyle={{
-            backgroundColor: "transparent",
-            borderWidth: 0,
-            borderTopWidth: 0,
-            borderBottomWidth: 0,
-            marginBottom: 10,
-          }}
-          inputContainerStyle={{
-            backgroundColor: "transparent",
-            borderWidth: 1,
-            borderBottomWidth: 1,
-            borderRadius: 15,
-          }}
-          placeholder="Search for shops & restaurants"
-          onChangeText={onChangeSearch}
-          value={search}
         />
       </View>
     </>
