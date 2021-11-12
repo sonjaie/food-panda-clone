@@ -17,13 +17,19 @@ class BottonNav extends React.Component {
       <>
         <Tab.Navigator
           screenOptions={{
+            tabBarShowLabel: false,
             headerShown: false,
             tabBarHideOnKeyboard: true,
             lazy: true,
+            tabBarActiveTintColor: "#FF1493",
           }}
-          activeColor="#f0edf6"
-          inactiveColor="#3e2465"
-          barStyle={{ backgroundColor: "#694fad" }}
+          //activeColor="#FF1493"
+          //inactiveColor="#3e2465"
+          barStyle={
+            {
+              //backgroundColor: "#694fad"
+            }
+          }
         >
           <Tab.Screen
             name="Home"
