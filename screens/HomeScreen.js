@@ -12,6 +12,28 @@ import {
 } from "react-native-gesture-handler";
 
 export default function HomeScreen() {
+  const yourRestaurantHome = [
+    {
+      img: require("../assets/home-your-restaurants/burger-king.jpg"),
+      name: "burger-king",
+      duration: " 25 min",
+    },
+    {
+      img: require("../assets/home-your-restaurants/jollibee.jpg"),
+      name: "jollibee",
+      duration: " 20 min",
+    },
+    {
+      img: require("../assets/home-your-restaurants/kfc.jpg"),
+      name: "kfc",
+      duration: " 15 min",
+    },
+    {
+      img: require("../assets/home-your-restaurants/mcdo.jpg"),
+      name: "mcdo",
+      duration: " 10 min",
+    },
+  ];
   return (
     <>
       <ScrollView>
@@ -201,108 +223,46 @@ export default function HomeScreen() {
                   flexDirection: "row",
                 }}
               >
-                <ImageBackground
-                  style={{
-                    width: 250,
-                    height: 150,
-                    borderRadius: 15,
-                    overflow: "hidden",
-                    borderWidth: 0.5,
-                    marginRight: 15,
-                  }}
-                  source={require("../assets/home-your-restaurants/burger-king.jpg")}
-                >
-                  <View
-                    style={{
-                      position: "absolute",
-                      bottom: 10,
-                      left: 15,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: 13,
-                        color: "black",
-                        fontWeight: "bold",
-                        borderWidth: 1,
-                        backgroundColor: "white",
-                        borderRadius: 15,
-                        width: 60,
-                        paddingLeft: 8,
-                      }}
-                    >
-                      25 min
-                    </Text>
-                  </View>
-                </ImageBackground>
-                <ImageBackground
-                  style={{
-                    width: 250,
-                    height: 150,
-                    borderRadius: 15,
-                    overflow: "hidden",
-                    borderWidth: 0.5,
-                    marginRight: 15,
-                  }}
-                  source={require("../assets/home-your-restaurants/jollibee.jpg")}
-                >
-                  <View
-                    style={{
-                      position: "absolute",
-                      bottom: 10,
-                      left: 15,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: 13,
-                        color: "black",
-                        fontWeight: "bold",
-                        borderWidth: 1,
-                        backgroundColor: "white",
-                        borderRadius: 15,
-                        width: 60,
-                        paddingLeft: 8,
-                      }}
-                    >
-                      25 min
-                    </Text>
-                  </View>
-                </ImageBackground>
-                <ImageBackground
-                  style={{
-                    width: 250,
-                    height: 150,
-                    borderRadius: 15,
-                    overflow: "hidden",
-                    borderWidth: 0.5,
-                    marginRight: 15,
-                  }}
-                  source={require("../assets/home-your-restaurants/mcdo.jpg")}
-                >
-                  <View
-                    style={{
-                      position: "absolute",
-                      bottom: 10,
-                      left: 15,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: 13,
-                        color: "black",
-                        fontWeight: "bold",
-                        borderWidth: 1,
-                        backgroundColor: "white",
-                        borderRadius: 15,
-                        width: 60,
-                        paddingLeft: 8,
-                      }}
-                    >
-                      25 min
-                    </Text>
-                  </View>
-                </ImageBackground>
+                {yourRestaurantHome.map((items, index) => {
+                  return (
+                    <TouchableOpacity>
+                      <ImageBackground
+                        style={{
+                          width: 250,
+                          height: 150,
+                          borderRadius: 15,
+                          overflow: "hidden",
+                          borderWidth: 0.5,
+                          marginRight: 15,
+                        }}
+                        source={items.img}
+                      >
+                        <View
+                          style={{
+                            position: "absolute",
+                            bottom: 10,
+                            left: 15,
+                          }}
+                        >
+                          <Text
+                            style={{
+                              fontSize: 13,
+                              color: "black",
+                              fontWeight: "bold",
+                              borderWidth: 1,
+                              backgroundColor: "white",
+                              borderRadius: 15,
+                              width: 60,
+                              paddingLeft: 8,
+                            }}
+                          >
+                            {items.duration}
+                          </Text>
+                        </View>
+                      </ImageBackground>
+                    </TouchableOpacity>
+                  );
+                })}
               </View>
             </ScrollView>
           </View>
