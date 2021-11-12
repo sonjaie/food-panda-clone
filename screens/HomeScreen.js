@@ -18,24 +18,32 @@ export default function HomeScreen() {
       name: "Burger King",
       duration: " 25 min",
       location: "Xavier Divisoria",
+      food: ["Burger", "Fries", "Beverages", "Rice"],
+      fee: "₱ 40 delivery fee",
     },
     {
       img: require("../assets/home-your-restaurants/jollibee.jpg"),
       name: "Jollibee",
       duration: " 20 min",
       location: "CDO NHA Kauswagan",
+      food: ["Burger", "Fries", "Beverages", "Rice"],
+      fee: "₱ 40 delivery fee",
     },
     {
       img: require("../assets/home-your-restaurants/kfc.jpg"),
       name: "KFC",
       duration: " 15 min",
       location: "SM Downtown KFC",
+      food: ["Burger", "Fries", "Beverages", "Rice"],
+      fee: "₱ 40 delivery fee",
     },
     {
       img: require("../assets/home-your-restaurants/mcdo.jpg"),
       name: "MCDO",
       duration: " 10 min",
       location: "CDO NHA Kauswagan",
+      food: ["Burger", "Fries", "Beverages", "Rice"],
+      fee: "₱ 40 delivery fee",
     },
   ];
   return (
@@ -228,6 +236,7 @@ export default function HomeScreen() {
                 }}
               >
                 {yourRestaurantHome.map((items, index) => {
+                  const foodAddstring = items.food.join(", ");
                   return (
                     <TouchableOpacity>
                       <ImageBackground
@@ -273,6 +282,19 @@ export default function HomeScreen() {
                         >
                           {items.name} - {items.location}
                         </Text>
+                        <Text
+                          numberOfLines={1}
+                          ellipsizeMode="tail"
+                          style={{
+                            fontWeight: "bold",
+                            width: 250,
+                            color: "grey",
+                            marginTop: 8,
+                          }}
+                        >
+                          {foodAddstring}
+                        </Text>
+                        <Text style={{ fontWeight: "bold" }}>{items.fee}</Text>
                       </View>
                     </TouchableOpacity>
                   );
