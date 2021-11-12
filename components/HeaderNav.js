@@ -57,7 +57,7 @@ export default function HeaderNav() {
             },
 
             elevation: 6,
-            marginBottom: 2,
+            marginBottom: 1,
           }}
           backgroundColor="white"
           placement="left"

@@ -306,6 +306,54 @@ export default function HomeScreen() {
             </ScrollView>
           </View>
           {/* End of Your Restaurants */}
+          {/* Start of Promo Card */}
+          <View style={{ paddingBottom: 15 }}>
+            <TouchableOpacity>
+              <ImageBackground
+                style={{
+                  width: "100%",
+                  height: 100,
+                  borderRadius: 15,
+                  overflow: "hidden",
+                  borderWidth: 0.5,
+                  marginRight: 15,
+                }}
+                source={require("../assets/home-your-restaurants/discount-card.png")}
+              >
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: 20,
+                    left: 5,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      color: "black",
+                      fontWeight: "bold",
+                      width: 150,
+                      paddingLeft: 8,
+                    }}
+                  >
+                    Become a pro
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 15,
+                      color: "black",
+                      //fontWeight: "bold",
+                      width: 150,
+                      paddingLeft: 8,
+                    }}
+                  >
+                    for monthly FREE deliveries
+                  </Text>
+                </View>
+              </ImageBackground>
+            </TouchableOpacity>
+          </View>
+          {/* End of Promo Card */}
         </View>
       </ScrollView>
     </>

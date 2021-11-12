@@ -6,7 +6,7 @@ export default function Searchbar() {
   const [search, setsearch] = useState("");
   const onChangeSearch = (query) => setsearch(query);
   return (
-    <View>
+    <View style={{ paddingTop: 15 }}>
       <SearchBar
         inputStyle={{
           backgroundColor: "transparent",
