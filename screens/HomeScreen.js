@@ -15,23 +15,27 @@ export default function HomeScreen() {
   const yourRestaurantHome = [
     {
       img: require("../assets/home-your-restaurants/burger-king.jpg"),
-      name: "burger-king",
+      name: "Burger King",
       duration: " 25 min",
+      location: "Xavier Divisoria",
     },
     {
       img: require("../assets/home-your-restaurants/jollibee.jpg"),
-      name: "jollibee",
+      name: "Jollibee",
       duration: " 20 min",
+      location: "CDO NHA Kauswagan",
     },
     {
       img: require("../assets/home-your-restaurants/kfc.jpg"),
-      name: "kfc",
+      name: "KFC",
       duration: " 15 min",
+      location: "SM Downtown KFC",
     },
     {
       img: require("../assets/home-your-restaurants/mcdo.jpg"),
-      name: "mcdo",
+      name: "MCDO",
       duration: " 10 min",
+      location: "CDO NHA Kauswagan",
     },
   ];
   return (
@@ -261,6 +265,15 @@ export default function HomeScreen() {
                           </Text>
                         </View>
                       </ImageBackground>
+                      <View style={{ marginTop: 10 }}>
+                        <Text
+                          numberOfLines={1}
+                          ellipsizeMode="tail"
+                          style={{ fontWeight: "bold", width: 250 }}
+                        >
+                          {items.name} - {items.location}
+                        </Text>
+                      </View>
                     </TouchableOpacity>
                   );
                 })}
