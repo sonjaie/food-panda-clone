@@ -1,6 +1,6 @@
 //import screens
-import BottonNav from "./components/BottonNav";
-import HeaderNav from "./components/HeaderNav";
+// import BottonNav from "./components/BottonNav";
+// import HeaderNav from "./components/HeaderNav";
 import MainScreen from "./screens/MainScreen";
 import FoodDelivery from "./screens/FoodDelivery";
 
@@ -17,10 +17,11 @@ import {
   Text,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { enableScreens } from "react-native-screens";
 
-const Stack = createNativeStackNavigator();
+enableScreens();
 export default function App() {
   const [loading, setloading] = useState(true);
 
@@ -29,7 +30,7 @@ export default function App() {
       setloading(false);
     }, 2000);
   });
-
+  const Stack = createNativeStackNavigator();
   return (
     <>
       <SafeAreaProvider
@@ -44,11 +45,14 @@ export default function App() {
           <>
             <NavigationContainer>
               <Stack.Navigator initialRouteName="MainScreen">
-                <Stack.Screen name="MainScreen" component={MainScreen} />
+                <Stack.Screen
+                  options={{ headerShown: false }}
+                  name="MainScreen"
+                  component={MainScreen}
+                />
                 <Stack.Screen name="FoodDelivery" component={FoodDelivery} />
               </Stack.Navigator>
             </NavigationContainer>
-            {/* <MainScreen /> */}
           </>
         )}
       </SafeAreaProvider>

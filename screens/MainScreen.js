@@ -18,9 +18,6 @@ export default function MainScreen() {
         <HeaderNav />
       </View>
       <BottonNav />
-      {/* <NavigationContainer theme={MyTheme}>
-        <BottonNav />
-      </NavigationContainer> */}
     </>
   );
 }

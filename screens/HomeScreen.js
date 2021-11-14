@@ -1,5 +1,5 @@
 // Import Screens
-import FoodDelivery from "./FoodDelivery";
+//import FoodDelivery from "./FoodDelivery";
 import Searchbar from "../components/Searchbar";
 
 // Import Dependencies
@@ -14,8 +14,6 @@ import {
   FlatList,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
 
 export default function HomeScreen({ navigation }) {
   const yourRestaurantHome = [
@@ -124,9 +122,6 @@ export default function HomeScreen({ navigation }) {
       no_restaurants: "2",
     },
   ];
-
-  console.log(navigation);
-
   return (
     <>
       <ScrollView>
