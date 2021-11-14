@@ -32,7 +32,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       setloading(false);
-    }, 2000);
+    }, 3000);
   });
   const Stack = createNativeStackNavigator();
 
@@ -42,6 +42,7 @@ export default function App() {
         <View
           style={{
             flexDirection: "row",
+            paddingRight: 15,
           }}
         >
           <TouchableOpacity>
