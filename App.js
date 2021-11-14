@@ -15,11 +15,15 @@ import {
   Platform,
   ActivityIndicator,
   Text,
+  TouchableOpacity,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { enableScreens } from "react-native-screens";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Fontisto from "react-native-vector-icons/Fontisto";
+import HeaderNav from "./components/HeaderNav";
 
 enableScreens();
 export default function App() {
@@ -31,6 +35,43 @@ export default function App() {
     }, 2000);
   });
   const Stack = createNativeStackNavigator();
+
+  function FoodDeliveryrightComponent() {
+    return (
+      <>
+        <View
+          style={{
+            flexDirection: "row",
+          }}
+        >
+          <TouchableOpacity>
+            <MaterialCommunityIcons
+              name="heart-outline"
+              color="#FF1493"
+              size={25}
+              style={{
+                marginRight: 15,
+              }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Fontisto name="shopping-basket" color="#FF1493" size={23} />
+          </TouchableOpacity>
+        </View>
+      </>
+    );
+  }
+
+  function FoodDeliveryleftComponent() {
+    return (
+      <>
+        <View>
+          <Text style={{ color: "#FF1493", fontWeight: "bold" }}>Home </Text>
+          <Text style={{ color: "black" }}>Restaurant Delivery</Text>
+        </View>
+      </>
+    );
+  }
   return (
     <>
       <SafeAreaProvider
@@ -50,7 +91,16 @@ export default function App() {
                   name="MainScreen"
                   component={MainScreen}
                 />
-                <Stack.Screen name="FoodDelivery" component={FoodDelivery} />
+                <Stack.Screen
+                  options={{
+                    title: "Food Delivery",
+                    headerRight: FoodDeliveryrightComponent,
+                    headerTitle: FoodDeliveryleftComponent,
+                    headerTintColor: "#FF1493",
+                  }}
+                  name="FoodDelivery"
+                  component={FoodDelivery}
+                />
               </Stack.Navigator>
             </NavigationContainer>
           </>
