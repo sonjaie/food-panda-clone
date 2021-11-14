@@ -11,6 +11,7 @@ import {
   StatusBar,
   Platform,
   ActivityIndicator,
+  Text,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
@@ -34,22 +35,27 @@ export default function App() {
   };
 
   return (
-    <SafeAreaProvider>
-      {loading ? (
-        <View style={styles.loadingStyle}>
-          <ActivityIndicator size="large" color="pink" />
-        </View>
-      ) : (
-        <>
-          <View>
-            <HeaderNav />
+    <>
+      <SafeAreaProvider
+        style={loading ? styles.backgroundcolor : styles.backgroundcolor1}
+      >
+        {loading ? (
+          <View style={styles.loadingStyle}>
+            <ActivityIndicator size="large" color="pink" />
+            <Text style={styles.loadingFoodpanda}>FoodPanda Clone</Text>
           </View>
-          <NavigationContainer theme={MyTheme}>
-            <BottonNav />
-          </NavigationContainer>
-        </>
-      )}
-    </SafeAreaProvider>
+        ) : (
+          <>
+            <View>
+              <HeaderNav />
+            </View>
+            <NavigationContainer theme={MyTheme}>
+              <BottonNav />
+            </NavigationContainer>
+          </>
+        )}
+      </SafeAreaProvider>
+    </>
   );
 }
 
@@ -63,5 +69,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: "50%",
+    backgroundColor: "#FF1493",
+  },
+  backgroundcolor: {
+    backgroundColor: "#FF1493",
+  },
+  backgroundcolor1: {
+    backgroundColor: "transparent",
+  },
+  loadingFoodpanda: {
+    fontSize: 30,
+    color: "white",
+    fontWeight: "bold",
   },
 });
