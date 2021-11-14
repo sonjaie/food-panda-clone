@@ -1,5 +1,8 @@
 //import screens
 import BottonNav from "./components/BottonNav";
+import HeaderNav from "./components/HeaderNav";
+import MainScreen from "./screens/MainScreen";
+import FoodDelivery from "./screens/FoodDelivery";
 
 //import dependencies
 import "react-native-gesture-handler";
@@ -15,8 +18,9 @@ import {
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import HeaderNav from "./components/HeaderNav";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+const Stack = createNativeStackNavigator();
 export default function App() {
   const [loading, setloading] = useState(true);
 
@@ -25,14 +29,6 @@ export default function App() {
       setloading(false);
     }, 2000);
   });
-
-  const MyTheme = {
-    ...DefaultTheme,
-    colors: {
-      ...DefaultTheme.colors,
-      background: "white",
-    },
-  };
 
   return (
     <>
@@ -46,12 +42,13 @@ export default function App() {
           </View>
         ) : (
           <>
-            <View>
-              <HeaderNav />
-            </View>
-            <NavigationContainer theme={MyTheme}>
-              <BottonNav />
+            <NavigationContainer>
+              <Stack.Navigator initialRouteName="MainScreen">
+                <Stack.Screen name="MainScreen" component={MainScreen} />
+                <Stack.Screen name="FoodDelivery" component={FoodDelivery} />
+              </Stack.Navigator>
             </NavigationContainer>
+            {/* <MainScreen /> */}
           </>
         )}
       </SafeAreaProvider>

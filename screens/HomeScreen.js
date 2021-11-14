@@ -1,3 +1,8 @@
+// Import Screens
+import FoodDelivery from "./FoodDelivery";
+import Searchbar from "../components/Searchbar";
+
+// Import Dependencies
 import React from "react";
 import {
   ScrollView,
@@ -8,13 +13,11 @@ import {
   Image,
   FlatList,
 } from "react-native";
-import {
-  TouchableHighlight,
-  TouchableOpacity,
-} from "react-native-gesture-handler";
-import Searchbar from "../components/Searchbar";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const yourRestaurantHome = [
     {
       img: require("../assets/home-your-restaurants/burger-king.jpg"),
@@ -121,6 +124,9 @@ export default function HomeScreen() {
       no_restaurants: "2",
     },
   ];
+
+  console.log(navigation);
+
   return (
     <>
       <ScrollView>
@@ -134,7 +140,7 @@ export default function HomeScreen() {
           {/* Search bar */}
           <Searchbar />
           {/* start of food delivery button */}
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("FoodDelivery")}>
             <ImageBackground
               style={{
                 width: "100%",
