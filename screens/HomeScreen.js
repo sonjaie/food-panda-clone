@@ -6,6 +6,7 @@ import {
   Text,
   View,
   Image,
+  FlatList,
 } from "react-native";
 import {
   TouchableHighlight,
@@ -61,6 +62,63 @@ export default function HomeScreen() {
     },
     {
       img: require("../assets/home-daily-deals/mcdo.jpg"),
+    },
+  ];
+
+  const cuisinesHome = [
+    {
+      id: "1",
+      img: require("../assets/home-cuisines/asian.png"),
+      title: "Asian",
+      no_restaurants: "308",
+    },
+    {
+      id: "2",
+      img: require("../assets/home-cuisines/burgers.png"),
+      title: "Burgers",
+      no_restaurants: "29",
+    },
+    {
+      id: "3",
+      img: require("../assets/home-cuisines/chicken.png"),
+      title: "Chicken",
+      no_restaurants: "96",
+    },
+    {
+      id: "4",
+      img: require("../assets/home-cuisines/pizza.png"),
+      title: "Pizza",
+      no_restaurants: "32",
+    },
+    {
+      id: "5",
+      img: require("../assets/home-cuisines/cake.png"),
+      title: "Cakes",
+      no_restaurants: "47",
+    },
+    {
+      id: "6",
+      img: require("../assets/home-cuisines/filipino.png"),
+      title: "Filipino",
+      no_restaurants: "226",
+    },
+    {
+      id: "7",
+      img: require("../assets/home-cuisines/fish.png"),
+      title: "Fish",
+      no_restaurants: "2",
+    },
+    {
+      id: "8",
+      img: require("../assets/home-cuisines/fruit.png"),
+      title: "Fruit",
+      no_restaurants: "4",
+    },
+    {
+      id: "9",
+      img: require("../assets/home-cuisines/french.png"),
+      title: "French",
+      no_restaurants: "2",
     },
   ];
   return (
@@ -351,6 +409,70 @@ export default function HomeScreen() {
             </ScrollView>
           </View>
           {/* End of Daily Deals */}
+          {/* Start of Cuisines */}
+          <View style={{ paddingBottom: 15, paddingTop: 15 }}>
+            <Text style={styles.homeScreenTxtHeader}>Cuisines</Text>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <FlatList
+                contentContainerStyle={{ alignSelf: "flex-start" }}
+                numColumns={Math.ceil(cuisinesHome.length / 2)}
+                keyExtractor={(item) => item.id}
+                data={cuisinesHome}
+                renderItem={({ item }) => (
+                  <View style={{ marginBottom: 15 }}>
+                    <TouchableOpacity>
+                      <ImageBackground
+                        style={{
+                          width: 200,
+                          height: 100,
+                          borderRadius: 15,
+                          overflow: "hidden",
+                          borderWidth: 0.5,
+                          marginRight: 15,
+                        }}
+                        source={item.img}
+                      >
+                        <View
+                          style={{
+                            position: "absolute",
+                            bottom: 20,
+                            left: 5,
+                          }}
+                        >
+                          <Text
+                            style={{
+                              fontSize: 20,
+                              color: "white",
+                              fontWeight: "bold",
+                              width: 150,
+                              paddingLeft: 8,
+                            }}
+                          >
+                            {item.title}
+                          </Text>
+                          <Text
+                            style={{
+                              fontSize: 15,
+                              color: "black",
+                              //fontWeight: "bold",
+                              width: 150,
+                              paddingLeft: 8,
+                            }}
+                          >
+                            {item.no_restaurants} restaurants
+                          </Text>
+                        </View>
+                      </ImageBackground>
+                    </TouchableOpacity>
+                  </View>
+                )}
+              />
+            </ScrollView>
+          </View>
+          {/* End of Cuisines */}
         </View>
       </ScrollView>
     </>
