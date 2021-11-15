@@ -69,6 +69,7 @@ export default function Searchbar() {
   const searchFilterFunction = (text) => {
     if (text) {
       const newData = masterDataSource.filter(function (item) {
+        console.log(item.name);
         const itemData = item.name;
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
@@ -87,18 +88,18 @@ export default function Searchbar() {
     return (
       <>
         <View style={{ alignItems: "center", paddingBottom: 15 }}>
-          <ScrollView style={{}}>
+          <ScrollView>
             <View>
               <TouchableOpacity>
                 <ImageBackground
                   key={index}
                   style={{
-                    width: 320,
+                    width: 340,
                     height: 150,
                     borderRadius: 15,
                     overflow: "hidden",
                     borderWidth: 0.5,
-                    marginRight: 15,
+                    marginRight: 2,
                   }}
                   source={item.img}
                 >
