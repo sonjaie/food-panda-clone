@@ -1,3 +1,6 @@
+//import data
+import { yourRestaurantHome } from "../api/Db";
+
 import React, { useState } from "react";
 import {
   FlatList,
@@ -13,55 +16,6 @@ import {
 import { Header, SearchBar } from "react-native-elements";
 
 export default function Searchbar() {
-  const yourRestaurantHome = [
-    {
-      id: "1",
-      img: require("../assets/home-your-restaurants/burger-king.jpg"),
-      name: "Burger King",
-      duration: " 25 min",
-      location: "Xavier Divisoria",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      id: "2",
-      img: require("../assets/home-your-restaurants/jollibee.jpg"),
-      name: "Jollibee",
-      duration: " 20 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      id: "3",
-      img: require("../assets/home-your-restaurants/kfc.jpg"),
-      name: "KFC",
-      duration: " 15 min",
-      location: "SM Downtown KFC",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      id: "4",
-      img: require("../assets/home-your-restaurants/mcdo.jpg"),
-      name: "MCDO",
-      duration: " 10 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-
-    {
-      id: "5",
-      img: require("../assets/home-your-restaurants/mcdo.jpg"),
-      name: "MCDO",
-      duration: " 10 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-  ];
-
   const [search, setSearch] = useState("");
   const [filteredDataSource, setFilteredDataSource] =
     useState(yourRestaurantHome);

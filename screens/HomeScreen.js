@@ -1,3 +1,10 @@
+// Import data
+import {
+  yourRestaurantHome,
+  yourDailyDealsHome,
+  cuisinesHome,
+} from "../api/Db";
+
 // Import Screens
 //import FoodDelivery from "./FoodDelivery";
 import Searchbar from "../components/Searchbar";
@@ -17,112 +24,82 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function HomeScreen({ navigation }) {
-  const yourRestaurantHome = [
-    {
-      img: require("../assets/home-your-restaurants/burger-king.jpg"),
-      name: "Burger King",
-      duration: " 25 min",
-      location: "Xavier Divisoria",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      img: require("../assets/home-your-restaurants/jollibee.jpg"),
-      name: "Jollibee",
-      duration: " 20 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      img: require("../assets/home-your-restaurants/kfc.jpg"),
-      name: "KFC",
-      duration: " 15 min",
-      location: "SM Downtown KFC",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      img: require("../assets/home-your-restaurants/mcdo.jpg"),
-      name: "MCDO",
-      duration: " 10 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-  ];
-
-  const yourDailyDealsHome = [
-    {
-      img: require("../assets/home-daily-deals/burger-king.jpg"),
-    },
-    {
-      img: require("../assets/home-daily-deals/jollibee.jpg"),
-    },
-    {
-      img: require("../assets/home-daily-deals/kfc.jpg"),
-    },
-    {
-      img: require("../assets/home-daily-deals/mcdo.jpg"),
-    },
-  ];
-
-  const cuisinesHome = [
-    {
-      id: "1",
-      img: require("../assets/home-cuisines/asian.png"),
-      title: "Asian",
-      no_restaurants: "308",
-    },
-    {
-      id: "2",
-      img: require("../assets/home-cuisines/burgers.png"),
-      title: "Burgers",
-      no_restaurants: "29",
-    },
-    {
-      id: "3",
-      img: require("../assets/home-cuisines/chicken.png"),
-      title: "Chicken",
-      no_restaurants: "96",
-    },
-    {
-      id: "4",
-      img: require("../assets/home-cuisines/pizza.png"),
-      title: "Pizza",
-      no_restaurants: "32",
-    },
-    {
-      id: "5",
-      img: require("../assets/home-cuisines/cake.png"),
-      title: "Cakes",
-      no_restaurants: "47",
-    },
-    {
-      id: "6",
-      img: require("../assets/home-cuisines/filipino.png"),
-      title: "Filipino",
-      no_restaurants: "226",
-    },
-    {
-      id: "7",
-      img: require("../assets/home-cuisines/fish.png"),
-      title: "Fish",
-      no_restaurants: "2",
-    },
-    {
-      id: "8",
-      img: require("../assets/home-cuisines/fruit.png"),
-      title: "Fruit",
-      no_restaurants: "4",
-    },
-    {
-      id: "9",
-      img: require("../assets/home-cuisines/french.png"),
-      title: "French",
-      no_restaurants: "2",
-    },
-  ];
+  function pandapicks({ item }) {
+    if (item.rate >= 4) {
+      const foodAddstring = item.food.join(", ");
+      return (
+        <>
+          <View
+            style={{
+              width: "80%",
+              flex: 1,
+              flexDirection: "row",
+            }}
+          >
+            <TouchableOpacity>
+              <ImageBackground
+                key={item.id}
+                style={{
+                  width: 250,
+                  height: 150,
+                  borderRadius: 15,
+                  overflow: "hidden",
+                  borderWidth: 0.5,
+                  marginRight: 15,
+                }}
+                source={item.img}
+              >
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: 10,
+                    left: 15,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: "black",
+                      fontWeight: "bold",
+                      borderWidth: 1,
+                      backgroundColor: "white",
+                      borderRadius: 15,
+                      width: 60,
+                      paddingLeft: 5,
+                    }}
+                  >
+                    {item.duration}
+                  </Text>
+                </View>
+              </ImageBackground>
+              <View style={{ marginTop: 10 }}>
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={{ fontWeight: "bold", width: 250 }}
+                >
+                  {item.name} - {item.location}
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={{
+                    fontWeight: "bold",
+                    width: 250,
+                    color: "grey",
+                    marginTop: 8,
+                  }}
+                >
+                  {foodAddstring}
+                </Text>
+                <Text style={{ fontWeight: "bold" }}>{item.fee}</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </>
+      );
+    }
+  }
   return (
     <>
       <ScrollView>
@@ -516,78 +493,13 @@ export default function HomeScreen({ navigation }) {
               horizontal={true}
               showsHorizontalScrollIndicator={false}
             >
-              <View
-                style={{
-                  width: "80%",
-                  flex: 1,
-                  flexDirection: "row",
-                }}
-              >
-                {yourRestaurantHome.map((items, index) => {
-                  const foodAddstring = items.food.join(", ");
-                  return (
-                    <TouchableOpacity>
-                      <ImageBackground
-                        key={index}
-                        style={{
-                          width: 250,
-                          height: 150,
-                          borderRadius: 15,
-                          overflow: "hidden",
-                          borderWidth: 0.5,
-                          marginRight: 15,
-                        }}
-                        source={items.img}
-                      >
-                        <View
-                          style={{
-                            position: "absolute",
-                            bottom: 10,
-                            left: 15,
-                          }}
-                        >
-                          <Text
-                            style={{
-                              fontSize: 13,
-                              color: "black",
-                              fontWeight: "bold",
-                              borderWidth: 1,
-                              backgroundColor: "white",
-                              borderRadius: 15,
-                              width: 60,
-                              paddingLeft: 5,
-                            }}
-                          >
-                            {items.duration}
-                          </Text>
-                        </View>
-                      </ImageBackground>
-                      <View style={{ marginTop: 10 }}>
-                        <Text
-                          numberOfLines={1}
-                          ellipsizeMode="tail"
-                          style={{ fontWeight: "bold", width: 250 }}
-                        >
-                          {items.name} - {items.location}
-                        </Text>
-                        <Text
-                          numberOfLines={1}
-                          ellipsizeMode="tail"
-                          style={{
-                            fontWeight: "bold",
-                            width: 250,
-                            color: "grey",
-                            marginTop: 8,
-                          }}
-                        >
-                          {foodAddstring}
-                        </Text>
-                        <Text style={{ fontWeight: "bold" }}>{items.fee}</Text>
-                      </View>
-                    </TouchableOpacity>
-                  );
-                })}
-              </View>
+              <FlatList
+                contentContainerStyle={{ alignSelf: "flex-start" }}
+                numColumns={Math.ceil(yourRestaurantHome.length / 1)}
+                data={yourRestaurantHome}
+                renderItem={pandapicks}
+                keyExtractor={(item) => item.id}
+              />
             </ScrollView>
           </View>
           {/* End of pandapicks */}

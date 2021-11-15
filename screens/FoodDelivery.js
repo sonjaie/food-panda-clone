@@ -1,3 +1,6 @@
+//import Data
+import { yourRestaurantHome } from "../api/Db";
+
 // import screens
 import Searchbar from "../components/Searchbar";
 
@@ -18,46 +21,6 @@ import {
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function FoodDelivery({ navigation }) {
-  // data
-  const yourRestaurantHome = [
-    {
-      id: "1",
-      img: require("../assets/home-your-restaurants/burger-king.jpg"),
-      name: "Burger King",
-      duration: " 25 min",
-      location: "Xavier Divisoria",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      id: "2",
-      img: require("../assets/home-your-restaurants/jollibee.jpg"),
-      name: "Jollibee",
-      duration: " 20 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      id: "3",
-      img: require("../assets/home-your-restaurants/kfc.jpg"),
-      name: "KFC",
-      duration: " 15 min",
-      location: "SM Downtown KFC",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-    {
-      id: "4",
-      img: require("../assets/home-your-restaurants/mcdo.jpg"),
-      name: "MCDO",
-      duration: " 10 min",
-      location: "CDO NHA Kauswagan",
-      food: ["Burger", "Fries", "Beverages", "Rice"],
-      fee: "₱ 40 delivery fee",
-    },
-  ];
-
   // food items
   function foodDeliveryDeals({ item }) {
     return (
