@@ -1,6 +1,4 @@
 //import screens
-// import BottonNav from "./components/BottonNav";
-// import HeaderNav from "./components/HeaderNav";
 import MainScreen from "./screens/MainScreen";
 import FoodDelivery from "./screens/FoodDelivery";
 
@@ -23,7 +21,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { enableScreens } from "react-native-screens";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Fontisto from "react-native-vector-icons/Fontisto";
-import HeaderNav from "./components/HeaderNav";
+import Searchbar from "./components/Searchbar";
 
 enableScreens();
 export default function App() {
@@ -102,6 +100,16 @@ export default function App() {
                   name="FoodDelivery"
                   component={FoodDelivery}
                 />
+                <Stack.Screen
+                  options={{
+                    title: "Search Bar Foods",
+                    headerRight: FoodDeliveryrightComponent,
+                    headerTitle: FoodDeliveryleftComponent,
+                    headerTintColor: "#FF1493",
+                  }}
+                  name="Searchbar"
+                  component={Searchbar}
+                />
               </Stack.Navigator>
             </NavigationContainer>
           </>
@@ -127,7 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FF1493",
   },
   backgroundcolor1: {
-    backgroundColor: "transparent",
+    backgroundColor: "white",
   },
   loadingFoodpanda: {
     fontSize: 30,

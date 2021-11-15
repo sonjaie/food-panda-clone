@@ -14,6 +14,7 @@ import {
   FlatList,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function HomeScreen({ navigation }) {
   const yourRestaurantHome = [
@@ -133,7 +134,41 @@ export default function HomeScreen({ navigation }) {
           }}
         >
           {/* Search bar */}
-          <Searchbar />
+          {/* <Searchbar /> */}
+          <View
+            style={{
+              borderWidth: 1,
+              marginBottom: 20,
+              borderColor: "grey",
+              borderRadius: 25,
+              marginTop: 15,
+            }}
+          >
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Searchbar")}
+              style={{
+                flexDirection: "row",
+                paddingTop: 15,
+                paddingBottom: 15,
+                paddingLeft: 15,
+                alignItems: "center",
+              }}
+            >
+              <AntDesign
+                name="search1"
+                color="#FF1493"
+                size={20}
+                style={
+                  {
+                    //marginRight: 15,
+                  }
+                }
+              />
+              <Text style={{ paddingLeft: 15, color: "grey" }}>
+                Search for shops & restaurants
+              </Text>
+            </TouchableOpacity>
+          </View>
           {/* start of food delivery button */}
           <TouchableOpacity onPress={() => navigation.navigate("FoodDelivery")}>
             <ImageBackground
