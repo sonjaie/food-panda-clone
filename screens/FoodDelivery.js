@@ -1,5 +1,5 @@
 //import Data
-import { yourRestaurantHome } from "../api/Db";
+import { yourRestaurantHome, yourDailyDealsHome } from "../api/Db";
 
 // import screens
 import Searchbar from "../components/Searchbar";
@@ -61,6 +61,32 @@ export default function FoodDelivery({ navigation }) {
                 }}
                 source={item.img}
               >
+                <View
+                  style={{
+                    position: "absolute",
+                    top: 20,
+                    left: 0,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: "white",
+                      fontWeight: "bold",
+                      borderWidth: 1,
+                      borderTopRightRadius: 8,
+                      borderBottomRightRadius: 8,
+                      backgroundColor: "#FF1493",
+                      //borderRadius: 15,
+                      width: 70,
+                      paddingLeft: 5,
+                      paddingTop: 5,
+                      paddingBottom: 5,
+                    }}
+                  >
+                    50% OFF
+                  </Text>
+                </View>
                 <View
                   style={{
                     position: "absolute",
@@ -156,8 +182,8 @@ export default function FoodDelivery({ navigation }) {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <FlatList
             contentContainerStyle={{ alignSelf: "flex-start" }}
-            numColumns={Math.ceil(yourRestaurantHome.length / 1)}
-            data={yourRestaurantHome}
+            numColumns={Math.ceil(yourDailyDealsHome.length / 1)}
+            data={yourDailyDealsHome}
             renderItem={foodDeliveryDeals}
             keyExtractor={(item) => item.id}
           />

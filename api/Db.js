@@ -70,15 +70,19 @@ export const yourRestaurantHome = [
 
 export const yourDailyDealsHome = [
   {
+    id: "1",
     img: require("../assets/home-daily-deals/burger-king.jpg"),
   },
   {
+    id: "2",
     img: require("../assets/home-daily-deals/jollibee.jpg"),
   },
   {
+    id: "3",
     img: require("../assets/home-daily-deals/kfc.jpg"),
   },
   {
+    id: "4",
     img: require("../assets/home-daily-deals/mcdo.jpg"),
   },
 ];
