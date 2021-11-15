@@ -44,6 +44,75 @@ export default function FoodDelivery({ navigation }) {
     );
   }
 
+  function foodDeliveryEpicDeals({ item }) {
+    if (item.epicdeal === "true") {
+      return (
+        <>
+          <View>
+            <TouchableOpacity>
+              <ImageBackground
+                style={{
+                  width: 250,
+                  height: 150,
+                  borderRadius: 15,
+                  overflow: "hidden",
+                  borderWidth: 0.5,
+                  marginRight: 15,
+                }}
+                source={item.img}
+              >
+                <View
+                  style={{
+                    position: "absolute",
+                    bottom: 10,
+                    left: 15,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 13,
+                      color: "black",
+                      fontWeight: "bold",
+                      borderWidth: 1,
+                      backgroundColor: "white",
+                      borderRadius: 15,
+                      width: 60,
+                      paddingLeft: 5,
+                    }}
+                  >
+                    {item.duration}
+                  </Text>
+                </View>
+              </ImageBackground>
+              <View style={{ marginTop: 10 }}>
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={{ fontWeight: "bold", width: 250 }}
+                >
+                  {item.location}
+                </Text>
+                <Text
+                  numberOfLines={1}
+                  ellipsizeMode="tail"
+                  style={{
+                    fontWeight: "bold",
+                    width: 250,
+                    color: "grey",
+                    marginTop: 8,
+                  }}
+                >
+                  {item.food}
+                </Text>
+                <Text style={{ fontWeight: "bold" }}> {item.fee}</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </>
+      );
+    }
+  }
+
   return (
     <View style={{ paddingBottom: 15, paddingRight: 15, paddingLeft: 15 }}>
       {/* Search Bar */}
@@ -100,64 +169,15 @@ export default function FoodDelivery({ navigation }) {
         <Text style={styles.homeScreenTxtHeader}>
           Epic Deal - 50% off TODAY ONLY
         </Text>
-        <TouchableOpacity>
-          <ImageBackground
-            style={{
-              width: 250,
-              height: 150,
-              borderRadius: 15,
-              overflow: "hidden",
-              borderWidth: 0.5,
-              marginRight: 15,
-            }}
-            source={require("../assets/home-your-restaurants/burger-king.jpg")}
-          >
-            <View
-              style={{
-                position: "absolute",
-                bottom: 10,
-                left: 15,
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 13,
-                  color: "black",
-                  fontWeight: "bold",
-                  borderWidth: 1,
-                  backgroundColor: "white",
-                  borderRadius: 15,
-                  width: 60,
-                  paddingLeft: 5,
-                }}
-              >
-                25 min
-              </Text>
-            </View>
-          </ImageBackground>
-          <View style={{ marginTop: 10 }}>
-            <Text
-              numberOfLines={1}
-              ellipsizeMode="tail"
-              style={{ fontWeight: "bold", width: 250 }}
-            >
-              Burger King - Xavier Divisoria
-            </Text>
-            <Text
-              numberOfLines={1}
-              ellipsizeMode="tail"
-              style={{
-                fontWeight: "bold",
-                width: 250,
-                color: "grey",
-                marginTop: 8,
-              }}
-            >
-              Burger, Fries, Beverages, Rice
-            </Text>
-            <Text style={{ fontWeight: "bold" }}>₱ 40 delivery fee</Text>
-          </View>
-        </TouchableOpacity>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <FlatList
+            contentContainerStyle={{ alignSelf: "flex-start" }}
+            numColumns={Math.ceil(yourRestaurantHome.length / 1)}
+            data={yourRestaurantHome}
+            renderItem={foodDeliveryEpicDeals}
+            keyExtractor={(item) => item.id}
+          />
+        </ScrollView>
       </View>
       {/* Epid Deal today */}
     </View>

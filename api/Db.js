@@ -8,6 +8,7 @@ export const yourRestaurantHome = [
     food: ["Burger", "Fries", "Beverages", "Rice"],
     fee: "₱ 40 delivery fee",
     rate: "4",
+    epicdeal: "false",
   },
   {
     id: "2",
@@ -18,6 +19,7 @@ export const yourRestaurantHome = [
     food: ["Burger", "Fries", "Beverages", "Rice"],
     fee: "₱ 40 delivery fee",
     rate: "3",
+    epicdeal: "true",
   },
   {
     id: "3",
@@ -28,6 +30,7 @@ export const yourRestaurantHome = [
     food: ["Burger", "Fries", "Beverages", "Rice"],
     fee: "₱ 40 delivery fee",
     rate: "3",
+    epicdeal: "true",
   },
   {
     id: "4",
@@ -38,6 +41,7 @@ export const yourRestaurantHome = [
     food: ["Burger", "Fries", "Beverages", "Rice"],
     fee: "₱ 40 delivery fee",
     rate: "3",
+    epicdeal: "true",
   },
   {
     id: "5",
@@ -48,6 +52,7 @@ export const yourRestaurantHome = [
     food: ["Burger", "Fries", "Beverages", "Rice"],
     fee: "₱ 40 delivery fee",
     rate: "4",
+    epicdeal: "false",
   },
 
   {
@@ -59,6 +64,7 @@ export const yourRestaurantHome = [
     food: ["Sizzling", "Baked", "Chicken", "Rice", "Sea Foods"],
     fee: "₱ 40 delivery fee",
     rate: "4",
+    epicdeal: "false",
   },
 ];
 
