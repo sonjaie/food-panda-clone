@@ -509,6 +509,88 @@ export default function HomeScreen({ navigation }) {
             </ScrollView>
           </View>
           {/* End of Cuisines */}
+          {/* Start of pandapicks */}
+          <View style={{ marginBottom: 15 }}>
+            <Text style={styles.homeScreenTxtHeader}>pandapicks</Text>
+            <ScrollView
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+            >
+              <View
+                style={{
+                  width: "80%",
+                  flex: 1,
+                  flexDirection: "row",
+                }}
+              >
+                {yourRestaurantHome.map((items, index) => {
+                  const foodAddstring = items.food.join(", ");
+                  return (
+                    <TouchableOpacity>
+                      <ImageBackground
+                        key={index}
+                        style={{
+                          width: 250,
+                          height: 150,
+                          borderRadius: 15,
+                          overflow: "hidden",
+                          borderWidth: 0.5,
+                          marginRight: 15,
+                        }}
+                        source={items.img}
+                      >
+                        <View
+                          style={{
+                            position: "absolute",
+                            bottom: 10,
+                            left: 15,
+                          }}
+                        >
+                          <Text
+                            style={{
+                              fontSize: 13,
+                              color: "black",
+                              fontWeight: "bold",
+                              borderWidth: 1,
+                              backgroundColor: "white",
+                              borderRadius: 15,
+                              width: 60,
+                              paddingLeft: 5,
+                            }}
+                          >
+                            {items.duration}
+                          </Text>
+                        </View>
+                      </ImageBackground>
+                      <View style={{ marginTop: 10 }}>
+                        <Text
+                          numberOfLines={1}
+                          ellipsizeMode="tail"
+                          style={{ fontWeight: "bold", width: 250 }}
+                        >
+                          {items.name} - {items.location}
+                        </Text>
+                        <Text
+                          numberOfLines={1}
+                          ellipsizeMode="tail"
+                          style={{
+                            fontWeight: "bold",
+                            width: 250,
+                            color: "grey",
+                            marginTop: 8,
+                          }}
+                        >
+                          {foodAddstring}
+                        </Text>
+                        <Text style={{ fontWeight: "bold" }}>{items.fee}</Text>
+                      </View>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </ScrollView>
+          </View>
+          {/* End of pandapicks */}
         </View>
       </ScrollView>
     </>
