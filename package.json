@@ -24,6 +24,7 @@
     "react-native": "^0.64.3",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^1.10.3",
+    "react-native-modal-dropdown": "^1.0.2",
     "react-native-navigation": "^7.23.1-hotfix.1",
     "react-native-pager-view": "^5.4.6",
     "react-native-reanimated": "^2.2.4",

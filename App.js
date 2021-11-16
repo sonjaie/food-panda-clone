@@ -1,6 +1,7 @@
 //import screens
 import MainScreen from "./screens/MainScreen";
 import FoodDelivery from "./screens/FoodDelivery";
+import Searchbar from "./components/Searchbar";
 
 //import dependencies
 import "react-native-gesture-handler";
@@ -21,7 +22,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { enableScreens } from "react-native-screens";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Fontisto from "react-native-vector-icons/Fontisto";
-import Searchbar from "./components/Searchbar";
 
 enableScreens();
 export default function App() {
