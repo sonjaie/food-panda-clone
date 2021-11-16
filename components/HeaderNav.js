@@ -48,16 +48,16 @@ export default function HeaderNav() {
   const [showY, setshowY] = useState(false);
 
   function openModal() {
-    setshowY(true);
+    setshowY(!showY);
     Animated.timing(modalY, {
-      duration: 500,
+      duration: 300,
       toValue: 0,
       useNativeDriver: true,
     }).start();
   }
 
   function closeModal() {
-    setshowY(false);
+    setshowY(!showY);
     Animated.timing(modalY, {
       duration: 500,
       toValue: -deviceHeight,
@@ -72,7 +72,7 @@ export default function HeaderNav() {
         style={[styles.showmodal, { transform: [{ translateY: modalY }] }]}
       >
         <View>
-          <TouchableOpacity onPress={() => closeModal()}>
+          <TouchableOpacity>
             <Text>Hello Modal</Text>
           </TouchableOpacity>
         </View>
@@ -97,20 +97,57 @@ export default function HeaderNav() {
           backgroundColor="white"
           placement="left"
           leftComponent={{
-            size: 30,
-            icon: "menu",
-            color: "#FF1493",
-            onPress: () => closeModal(),
+            text: (
+              <>
+                <View>
+                  {!showY ? (
+                    <>
+                      <TouchableOpacity>
+                        <MaterialCommunityIcons
+                          name={!showY ? "menu" : "close"}
+                          color="#FF1493"
+                          size={25}
+                        />
+                      </TouchableOpacity>
+                    </>
+                  ) : (
+                    <>
+                      <TouchableOpacity>
+                        <MaterialCommunityIcons
+                          onPress={() => closeModal()}
+                          name={!showY ? "menu" : "close"}
+                          color="#FF1493"
+                          size={25}
+                        />
+                      </TouchableOpacity>
+                    </>
+                  )}
+                </View>
+              </>
+            ),
           }}
           centerComponent={{
             text: (
               <View>
                 <Text style={{ color: "#FF1493", fontWeight: "bold" }}>
-                  Home{" "}
+                  Home
                 </Text>
-                <Text onPress={() => openModal()} style={{ color: "black" }}>
-                  Olape Compund St. Michael St
-                </Text>
+                {showY ? (
+                  <>
+                    <Text style={{ color: "black" }}>
+                      Olape Compund St. Michael St
+                    </Text>
+                  </>
+                ) : (
+                  <>
+                    <Text
+                      onPress={() => openModal()}
+                      style={{ color: "black" }}
+                    >
+                      Olape Compund St. Michael St
+                    </Text>
+                  </>
+                )}
               </View>
             ),
           }}
