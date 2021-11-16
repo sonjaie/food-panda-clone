@@ -11,7 +11,9 @@ import {
 } from "react-native";
 import { Header, SearchBar } from "react-native-elements";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 function rightComponent() {
@@ -71,10 +73,95 @@ export default function HeaderNav() {
       <Animated.View
         style={[styles.showmodal, { transform: [{ translateY: modalY }] }]}
       >
-        <View>
-          <TouchableOpacity>
-            <Text>Hello Modal</Text>
-          </TouchableOpacity>
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: 100,
+          }}
+        >
+          <View style={{ paddingBottom: 15, marginRight: 100 }}>
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+              }}
+            >
+              <FontAwesome name="location-arrow" color="#FF1493" size={25} />
+              <Text
+                style={{
+                  paddingLeft: 15,
+                  fontWeight: "bold",
+                  color: "#FF1493",
+                }}
+              >
+                Use my current location
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              backgroundColor: "#ffe6e6",
+              borderRadius: 15,
+              flexDirection: "row",
+              marginBottom: 15,
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                paddingLeft: 15,
+              }}
+            >
+              <View>
+                <MaterialIcons name="my-location" color="#FF1493" size={25} />
+              </View>
+              <View
+                style={{
+                  width: "80%",
+                  paddingTop: 15,
+                  paddingLeft: 15,
+                  paddingBottom: 15,
+                  //marginLeft: 20,
+                }}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    color: "black",
+                  }}
+                >
+                  Home
+                </Text>
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    color: "grey",
+                  }}
+                >
+                  Olape Compound St. Michael St Cagayan De Oro Misamis Oriental
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={{ marginRight: 130 }}>
+            <TouchableOpacity
+              style={{
+                flexDirection: "row",
+              }}
+            >
+              <MaterialIcons name="add" color="#FF1493" size={25} />
+              <Text
+                style={{
+                  paddingLeft: 15,
+                  fontWeight: "bold",
+                  color: "#FF1493",
+                }}
+              >
+                Add New Address
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </Animated.View>
       {/* End of Modal */}
@@ -162,7 +249,7 @@ const styles = StyleSheet.create({
   showmodal: {
     borderWidth: 0.5,
     borderRadius: 10,
-    height: 200,
+    height: 290,
     width: deviceWidth,
     position: "absolute",
     top: 0,
