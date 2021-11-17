@@ -2,6 +2,7 @@
 import MainScreen from "./screens/MainScreen";
 import FoodDelivery from "./screens/FoodDelivery";
 import Searchbar from "./components/Searchbar";
+import GetCurrentLocation from "./screens/GetCurrentLocation";
 
 //import dependencies
 import "react-native-gesture-handler";
@@ -20,8 +21,11 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { enableScreens } from "react-native-screens";
+
+//import icons
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Fontisto from "react-native-vector-icons/Fontisto";
+import HeaderNav from "./components/HeaderNav";
 
 enableScreens();
 export default function App() {
@@ -109,6 +113,14 @@ export default function App() {
                   }}
                   name="Searchbar"
                   component={Searchbar}
+                />
+                <Stack.Screen
+                  options={{
+                    title: "Get Current Location",
+                    headerTintColor: "#FF1493",
+                  }}
+                  name="GetCurrentLocation"
+                  component={GetCurrentLocation}
                 />
               </Stack.Navigator>
             </NavigationContainer>

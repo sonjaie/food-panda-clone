@@ -6,11 +6,11 @@ import {
 } from "../api/Db";
 
 // Import Screens
-//import FoodDelivery from "./FoodDelivery";
 import Searchbar from "../components/Searchbar";
+import HeaderNav from "../components/HeaderNav";
 
 // Import Dependencies
-import React from "react";
+import React, { useState } from "react";
 import {
   ScrollView,
   ImageBackground,
@@ -19,8 +19,12 @@ import {
   View,
   Image,
   FlatList,
+  Animated,
+  Dimensions,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+
+//import icons
 import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function HomeScreen({ navigation }) {
@@ -100,6 +104,7 @@ export default function HomeScreen({ navigation }) {
       );
     }
   }
+
   return (
     <>
       <ScrollView>
@@ -272,9 +277,8 @@ export default function HomeScreen({ navigation }) {
                 {yourRestaurantHome.map((items, index) => {
                   const foodAddstring = items.food.join(", ");
                   return (
-                    <TouchableOpacity>
+                    <TouchableOpacity key={index}>
                       <ImageBackground
-                        key={index}
                         style={{
                           width: 250,
                           height: 150,
@@ -402,7 +406,7 @@ export default function HomeScreen({ navigation }) {
                 {yourDailyDealsHome.map((items, index) => {
                   return (
                     <>
-                      <TouchableOpacity>
+                      <TouchableOpacity key={index}>
                         <Image
                           style={{
                             width: 125,

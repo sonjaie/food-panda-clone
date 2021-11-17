@@ -143,3 +143,24 @@ export const cuisinesHome = [
     no_restaurants: "2",
   },
 ];
+
+export const Users = [
+  {
+    id: "1",
+    name: "Bangcoyo Jason",
+    email: "bxerses@gmail.com",
+    mobile: "1234567890",
+    city: "Cagayan De Oro City",
+    region: "Misamis Oriental",
+    zipcode: "9000",
+  },
+  {
+    id: "2",
+    name: "Bangcoyo Xerxes",
+    email: "bxerses@gmail.com",
+    mobile: "1234567890",
+    city: "Cagayan De Oro City",
+    region: "Misamis Oriental",
+    zipcode: "9000",
+  },
+];

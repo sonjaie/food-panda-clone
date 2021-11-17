@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from "react-native";
 import BottonNav from "../components/BottonNav";
 import HeaderNav from "../components/HeaderNav";
 
-export default function MainScreen() {
+export default function MainScreen({ navigation }) {
   const MyTheme = {
     ...DefaultTheme,
     colors: {
@@ -15,7 +15,7 @@ export default function MainScreen() {
   return (
     <>
       <View>
-        <HeaderNav />
+        <HeaderNav navigation={navigation} />
       </View>
       <BottonNav />
     </>
