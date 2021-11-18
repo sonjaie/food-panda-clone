@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Dimensions, StyleSheet, Text, View } from "react-native";
 import Constants from "expo-constants";
 import * as Location from "expo-location";
-import MapView from "react-native-maps";
+import MapView, { Marker } from "react-native-maps";
 
 export default function GetCurrentLocation() {
   const [location, setLocation] = useState(null);
@@ -27,8 +27,8 @@ export default function GetCurrentLocation() {
     })();
   }, []);
 
-  let latitude;
-  let longitude;
+  let latitude = "";
+  let longitude = "";
   if (errorMsg) {
     //text = errorMsg;
   } else if (location) {
@@ -36,24 +36,34 @@ export default function GetCurrentLocation() {
     longitude = location.coords.longitude;
   }
 
+  // console.log(latitude);
+  // console.log(longitude);
+
   return (
-    <View>
+    <View style={{ top: 20, bottom: 0, right: 40 }}>
       <MapView
         style={styles.map}
-        initialRegion={{
-          latitude: latitude,
-          longitude: longitude,
-          latitudeDelta: 0.0421,
-          longitudeDelta: 0.0421,
+        region={{
+          latitude: Number(latitude),
+          longitude: Number(longitude),
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
         }}
-      />
+      >
+        <Marker
+          coordinate={{
+            latitude: Number(longitude) ? latitude : 0,
+            longitude: Number(longitude) ? longitude : 0,
+          }}
+        />
+      </MapView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   map: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height,
+    width: 280,
+    height: 100,
   },
 });
