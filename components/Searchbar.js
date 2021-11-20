@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import { Header, SearchBar } from "react-native-elements";
 
-export default function Searchbar() {
+export default function Searchbar({ navigation }) {
   const [search, setSearch] = useState("");
   const [filteredDataSource, setFilteredDataSource] =
     useState(yourRestaurantHome);
@@ -27,7 +27,6 @@ export default function Searchbar() {
         const itemData = item.name;
         const itemDataUpperCase = itemData.toUpperCase();
         const textData = text.toUpperCase();
-        console.log(item);
         return itemDataUpperCase.indexOf(textData) > -1;
       });
       setFilteredDataSource(newData);
@@ -45,7 +44,20 @@ export default function Searchbar() {
       <>
         <View style={{ alignItems: "center", paddingBottom: 15 }}>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Orders", {
+                  itemId: item.id,
+                  productName: item.name,
+                  duration: item.duration,
+                  location: item.location,
+                  food: item.food,
+                  fee: item.fee,
+                  image: item.img,
+                  rate: item.rate,
+                })
+              }
+            >
               <ImageBackground
                 key={index}
                 style={{

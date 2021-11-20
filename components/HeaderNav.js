@@ -20,6 +20,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { Easing } from "react-native-reanimated";
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
@@ -47,6 +48,10 @@ export default function HeaderNav({ navigation }) {
     }).start();
   }
   // end of funtion modal
+
+  // show drawer
+
+  // hide drawer
 
   const [showLocation, setshowLocation] = useState(false);
   function ShowMap() {
@@ -228,6 +233,7 @@ export default function HeaderNav({ navigation }) {
             borderRadius: 15,
             flexDirection: "row",
             marginBottom: 15,
+            width: 300,
           }}
         >
           <TouchableOpacity
@@ -242,7 +248,7 @@ export default function HeaderNav({ navigation }) {
             </View>
             <View
               style={{
-                width: "80%",
+                width: 250,
                 paddingLeft: 15,
                 paddingBottom: 15,
               }}
@@ -254,7 +260,7 @@ export default function HeaderNav({ navigation }) {
                   paddingTop: 15,
                 }}
               >
-                Current Location
+                Home
               </Text>
               <Text
                 style={{
@@ -308,6 +314,9 @@ export default function HeaderNav({ navigation }) {
         </View>
       </Animated.View>
       {/* End of Modal */}
+
+      {/* Start of Drawer */}
+      {/* End of Drawer */}
       <View>
         <Header
           containerStyle={{
@@ -334,7 +343,7 @@ export default function HeaderNav({ navigation }) {
                     <>
                       <TouchableOpacity>
                         <MaterialCommunityIcons
-                          name={!showY ? "menu" : "close"}
+                          name="menu"
                           color="#FF1493"
                           size={25}
                         />
@@ -345,7 +354,7 @@ export default function HeaderNav({ navigation }) {
                       <TouchableOpacity>
                         <MaterialCommunityIcons
                           onPress={() => closeModal()}
-                          name={!showY ? "menu" : "close"}
+                          name={showY ? "close" : "menu"}
                           color="#FF1493"
                           size={25}
                         />
@@ -436,6 +445,19 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 300,
     width: deviceWidth,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    backgroundColor: "white",
+    justifyContent: "center",
+    zIndex: 1,
+  },
+
+  showDrawer: {
+    //borderWidth: 0.5,
+    //borderRadius: 10,
+    height: deviceHeight,
+    width: 300,
     position: "absolute",
     top: 0,
     left: 0,

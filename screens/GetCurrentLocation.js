@@ -1,5 +1,6 @@
+// import dependencies
 import React, { useEffect, useState } from "react";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, Text, View, Animated } from "react-native";
 import Constants from "expo-constants";
 import * as Location from "expo-location";
 import MapView, { Marker } from "react-native-maps";

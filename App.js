@@ -1,8 +1,12 @@
+//import data
+import { yourRestaurantHome } from "./api/Db";
+
 //import screens
 import MainScreen from "./screens/MainScreen";
 import FoodDelivery from "./screens/FoodDelivery";
 import Searchbar from "./components/Searchbar";
 import GetCurrentLocation from "./screens/GetCurrentLocation";
+import Orders from "./screens/Orders";
 
 //import dependencies
 import "react-native-gesture-handler";
@@ -16,6 +20,9 @@ import {
   ActivityIndicator,
   Text,
   TouchableOpacity,
+  ImageBackground,
+  Dimensions,
+  Image,
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
@@ -28,6 +35,9 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import HeaderNav from "./components/HeaderNav";
 
 enableScreens();
+
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 export default function App() {
   const [loading, setloading] = useState(true);
 
@@ -37,6 +47,27 @@ export default function App() {
     }, 3000);
   });
   const Stack = createNativeStackNavigator();
+
+  function OrderSelectComponent(route) {
+    //console.log(route.route.params.image);
+    return (
+      <>
+        <View>
+          {/* <ImageBackground
+            style={{
+              width: deviceWidth,
+              height: 150,
+              position: "absolute",
+              top: 0,
+              right: 0,
+              elevation: -1,
+            }}
+            source={route.route.params.image}
+          ></ImageBackground> */}
+        </View>
+      </>
+    );
+  }
 
   function FoodDeliveryrightComponent() {
     return (
@@ -121,6 +152,17 @@ export default function App() {
                   }}
                   name="GetCurrentLocation"
                   component={GetCurrentLocation}
+                />
+                <Stack.Screen
+                  name="Orders"
+                  component={Orders}
+                  options={({ route }) => ({
+                    headerShown: false,
+                    // title:
+                    //   route.params.productName + " - " + route.params.location,
+                    //headerRight: () => OrderSelectComponent({ route }),
+                    headerTintColor: "#FF1493",
+                  })}
                 />
               </Stack.Navigator>
             </NavigationContainer>
