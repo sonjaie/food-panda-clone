@@ -9,6 +9,163 @@ export const yourRestaurantHome = [
     fee: "₱ 40 delivery fee",
     rate: "4",
     epicdeal: "false",
+    distance: "3.3km",
+    locationlatlot: {
+      latitude: "",
+      longtitude: "",
+    },
+    categories: [
+      {
+        id: "1",
+        name: "Popular",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+            products: [
+              {
+                id: "1",
+                name: "Popular",
+              },
+              {
+                id: "2",
+                name: "Popular",
+              },
+              {
+                id: "3",
+                name: "Popular",
+              },
+            ],
+          },
+          {
+            id: "2",
+            name: "Popular",
+            products: [
+              {
+                id: "1",
+                name: "Popular",
+              },
+              {
+                id: "2",
+                name: "Popular",
+              },
+              {
+                id: "3",
+                name: "Popular",
+              },
+            ],
+          },
+          {
+            id: "3",
+            name: "Popular",
+            products: [
+              {
+                id: "1",
+                name: "Popular",
+              },
+              {
+                id: "2",
+                name: "Popular",
+              },
+              {
+                id: "3",
+                name: "Popular",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "FEATURED",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "WHOPPER",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "4",
+        name: "4-CHEESE WHOPPER",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "5",
+        name: "FLAME-GRILLED CHEESEBURGER",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "6",
+        name: "PLANT-BASED WHOPPER",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "2",
@@ -20,6 +177,103 @@ export const yourRestaurantHome = [
     fee: "₱ 40 delivery fee",
     rate: "3",
     epicdeal: "true",
+    distance: "3.3km",
+    locationlatlot: {
+      latitude: "",
+      longtitude: "",
+    },
+    categories: [
+      {
+        id: "1",
+        name: "Popular",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "FEATURED",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "4-CHEESE",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "4",
+        name: "FLAME-GRILLED",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "5",
+        name: "PLANT-BASED",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "3",
@@ -31,6 +285,67 @@ export const yourRestaurantHome = [
     fee: "₱ 40 delivery fee",
     rate: "3",
     epicdeal: "true",
+    distance: "3.3km",
+    locationlatlot: {
+      latitude: "",
+      longtitude: "",
+    },
+    categories: [
+      {
+        id: "1",
+        name: "Popular",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "FEATURED",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "Chickens",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "4",
@@ -42,6 +357,85 @@ export const yourRestaurantHome = [
     fee: "₱ 40 delivery fee",
     rate: "3",
     epicdeal: "true",
+    distance: "3.3km",
+    locationlatlot: {
+      latitude: "",
+      longtitude: "",
+    },
+    categories: [
+      {
+        id: "1",
+        name: "Popular",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "FEATURED",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "Cheese Burger",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "4",
+        name: "4-Cheese Burger",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "5",
@@ -53,6 +447,85 @@ export const yourRestaurantHome = [
     fee: "₱ 40 delivery fee",
     rate: "4",
     epicdeal: "false",
+    distance: "3.3km",
+    locationlatlot: {
+      latitude: "",
+      longtitude: "",
+    },
+    categories: [
+      {
+        id: "1",
+        name: "Popular",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "FEATURED",
+        products: [
+          {
+            id: "1",
+            name: "FEATURED",
+          },
+          {
+            id: "2",
+            name: "FEATURED",
+          },
+          {
+            id: "3",
+            name: "FEATURED",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "Cheese Burger",
+        products: [
+          {
+            id: "1",
+            name: "Cheese Burger",
+          },
+          {
+            id: "2",
+            name: "Cheese Burger",
+          },
+          {
+            id: "3",
+            name: "Cheese Burger",
+          },
+        ],
+      },
+      {
+        id: "4",
+        name: "4-Cheese Burger",
+        products: [
+          {
+            id: "1",
+            name: "Cheese Burger",
+          },
+          {
+            id: "2",
+            name: "Cheese Burger",
+          },
+          {
+            id: "3",
+            name: "Cheese Burger",
+          },
+        ],
+      },
+    ],
   },
 
   {
@@ -65,6 +538,85 @@ export const yourRestaurantHome = [
     fee: "₱ 40 delivery fee",
     rate: "4",
     epicdeal: "false",
+    distance: "3.3km",
+    locationlatlot: {
+      latitude: "",
+      longtitude: "",
+    },
+    categories: [
+      {
+        id: "1",
+        name: "Popular",
+        products: [
+          {
+            id: "1",
+            name: "Popular",
+          },
+          {
+            id: "2",
+            name: "Popular",
+          },
+          {
+            id: "3",
+            name: "Popular",
+          },
+        ],
+      },
+      {
+        id: "2",
+        name: "FEATURED",
+        products: [
+          {
+            id: "1",
+            name: "FEATURED",
+          },
+          {
+            id: "2",
+            name: "FEATURED",
+          },
+          {
+            id: "3",
+            name: "FEATURED",
+          },
+        ],
+      },
+      {
+        id: "3",
+        name: "Sizzling",
+        products: [
+          {
+            id: "1",
+            name: "Sizzling",
+          },
+          {
+            id: "2",
+            name: "Sizzling",
+          },
+          {
+            id: "3",
+            name: "Sizzling",
+          },
+        ],
+      },
+      {
+        id: "4",
+        name: "Sea Foods",
+        products: [
+          {
+            id: "1",
+            name: "Sea Foods",
+          },
+          {
+            id: "2",
+            name: "Sea Foods",
+          },
+          {
+            id: "3",
+            name: "Sea Foods",
+          },
+        ],
+      },
+    ],
   },
 ];
 

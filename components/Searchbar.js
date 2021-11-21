@@ -55,6 +55,8 @@ export default function Searchbar({ navigation }) {
                   fee: item.fee,
                   image: item.img,
                   rate: item.rate,
+                  distance: item.distance,
+                  categories: item.categories,
                 })
               }
             >
