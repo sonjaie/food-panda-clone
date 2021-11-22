@@ -22,56 +22,14 @@ export const yourRestaurantHome = [
           {
             id: "1",
             name: "Popular",
-            products: [
-              {
-                id: "1",
-                name: "Popular",
-              },
-              {
-                id: "2",
-                name: "Popular",
-              },
-              {
-                id: "3",
-                name: "Popular",
-              },
-            ],
           },
           {
             id: "2",
-            name: "Popular",
-            products: [
-              {
-                id: "1",
-                name: "Popular",
-              },
-              {
-                id: "2",
-                name: "Popular",
-              },
-              {
-                id: "3",
-                name: "Popular",
-              },
-            ],
+            name: "Popular2",
           },
           {
             id: "3",
-            name: "Popular",
-            products: [
-              {
-                id: "1",
-                name: "Popular",
-              },
-              {
-                id: "2",
-                name: "Popular",
-              },
-              {
-                id: "3",
-                name: "Popular",
-              },
-            ],
+            name: "Popular3",
           },
         ],
       },
@@ -81,15 +39,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "FEATURED",
           },
         ],
       },
@@ -99,15 +57,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "WHOPPER",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "WHOPPER",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "WHOPPER",
           },
         ],
       },
@@ -117,15 +75,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "4-CHEESE WHOPPER",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "4-CHEESE WHOPPER",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "4-CHEESE WHOPPER",
           },
         ],
       },
@@ -135,15 +93,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "FLAME-GRILLED CHEESEBURGER",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "FLAME-GRILLED CHEESEBURGER",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "FLAME-GRILLED CHEESEBURGER",
           },
         ],
       },
@@ -153,15 +111,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "PLANT-BASED WHOPPER",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "PLANT-BASED WHOPPER",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "PLANT-BASED WHOPPER",
           },
         ],
       },
@@ -207,15 +165,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "FEATURED",
           },
         ],
       },
@@ -225,15 +183,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "4-CHEESE",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "4-CHEESE",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "4-CHEESE",
           },
         ],
       },
@@ -243,15 +201,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "FLAME-GRILLED",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "FLAME-GRILLED",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "FLAME-GRILLED",
           },
         ],
       },
@@ -261,15 +219,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "PLANT-BASED",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "PLANT-BASED",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "PLANT-BASED",
           },
         ],
       },
@@ -315,15 +273,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "FEATURED",
           },
         ],
       },
@@ -333,15 +291,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "Chickens",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "Chickens",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "Chickens",
           },
         ],
       },
@@ -387,15 +345,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "FEATURED",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "FEATURED",
           },
         ],
       },
@@ -405,15 +363,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "Cheese Burger",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "Cheese Burger",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "Cheese Burger",
           },
         ],
       },
@@ -423,15 +381,15 @@ export const yourRestaurantHome = [
         products: [
           {
             id: "1",
-            name: "Popular",
+            name: "4-Cheese Burger",
           },
           {
             id: "2",
-            name: "Popular",
+            name: "4-Cheese Burger",
           },
           {
             id: "3",
-            name: "Popular",
+            name: "4-Cheese Burger",
           },
         ],
       },
