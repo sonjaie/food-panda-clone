@@ -34,6 +34,7 @@ export default function HomeScreen({ navigation }) {
       return (
         <>
           <View
+            key={item.id}
             style={{
               width: "80%",
               flex: 1,

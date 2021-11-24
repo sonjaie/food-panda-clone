@@ -7,6 +7,9 @@ import FoodDelivery from "./screens/FoodDelivery";
 import Searchbar from "./components/Searchbar";
 import GetCurrentLocation from "./screens/GetCurrentLocation";
 import Orders from "./screens/Orders";
+import HeaderNav from "./components/HeaderNav";
+import DrawerNav from "./screens/DrawerNav";
+import UserProfile from "./screens/UserProfile";
 
 //import dependencies
 import "react-native-gesture-handler";
@@ -27,12 +30,13 @@ import {
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import { enableScreens } from "react-native-screens";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //import icons
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Fontisto from "react-native-vector-icons/Fontisto";
-import HeaderNav from "./components/HeaderNav";
 
 enableScreens();
 
@@ -40,6 +44,7 @@ const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 export default function App() {
   const [loading, setloading] = useState(true);
+  const [token, setToken] = useState({ checking: true });
 
   useEffect(() => {
     setTimeout(() => {
@@ -47,27 +52,7 @@ export default function App() {
     }, 3000);
   });
   const Stack = createNativeStackNavigator();
-
-  function OrderSelectComponent(route) {
-    //console.log(route.route.params.image);
-    return (
-      <>
-        <View>
-          {/* <ImageBackground
-            style={{
-              width: deviceWidth,
-              height: 150,
-              position: "absolute",
-              top: 0,
-              right: 0,
-              elevation: -1,
-            }}
-            source={route.route.params.image}
-          ></ImageBackground> */}
-        </View>
-      </>
-    );
-  }
+  const Drawer = createDrawerNavigator();
 
   function FoodDeliveryrightComponent() {
     return (
@@ -162,6 +147,20 @@ export default function App() {
                     //   route.params.productName + " - " + route.params.location,
                     //headerRight: () => OrderSelectComponent({ route }),
                     headerTintColor: "#FF1493",
+                  })}
+                />
+                <Stack.Screen
+                  name="DrawerNav"
+                  component={DrawerNav}
+                  options={() => ({
+                    headerShown: false,
+                  })}
+                />
+                <Stack.Screen
+                  name="UserProfile"
+                  component={UserProfile}
+                  options={() => ({
+                    headerShown: false,
                   })}
                 />
               </Stack.Navigator>

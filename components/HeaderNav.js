@@ -1,4 +1,7 @@
 //import screens
+import GetCurrentLocation from "../screens/GetCurrentLocation";
+import MainScreen from "../screens/MainScreen";
+import FoodDelivery from "../screens/FoodDelivery";
 
 //import dependencies
 import React, { useEffect, useState } from "react";
@@ -6,29 +9,64 @@ import {
   StyleSheet,
   Text,
   View,
-  Modal,
   Pressable,
   Dimensions,
   Animated,
+  Alert,
 } from "react-native";
-import { Header, SearchBar } from "react-native-elements";
+import { Header, SearchBar, Button } from "react-native-elements";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import GetCurrentLocation from "../screens/GetCurrentLocation";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { NavigationContainer } from "@react-navigation/native";
+import { Easing } from "react-native-reanimated";
+import Modal from "react-native-modal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //import icons
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import { Easing } from "react-native-reanimated";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import SimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
+import DrawerNav from "../screens/DrawerNav";
 
 const deviceHeight = Dimensions.get("window").height;
 const deviceWidth = Dimensions.get("window").width;
 
 export default function HeaderNav({ navigation }) {
+  const [userDetails, setuserDetails] = useState([]);
+  const [token, setToken] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      AsyncStorage.getItem("userLogin").then((value) => {
+        if (value === null) {
+          setToken(false);
+        } else {
+          setuserDetails(JSON.parse(value));
+          setToken(true);
+        }
+      });
+    }, 1000);
+    //AsyncStorage.clear();
+  }, []);
+
+  function logout() {
+    AsyncStorage.removeItem("userLogin");
+    setToken(false);
+  }
+
   // start of function modal
+  const [modalVisible, setModalVisible] = useState(false);
   const [modalY, setmodalY] = useState(new Animated.Value(-deviceHeight));
   const [showY, setshowY] = useState(false);
+
+  const [loginModalVisible, setloginModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setloginModalVisible(!loginModalVisible);
+    setModalVisible(modalVisible);
+  };
 
   function openModal() {
     setshowY(!showY);
@@ -49,21 +87,165 @@ export default function HeaderNav({ navigation }) {
   }
   // end of funtion modal
 
-  // show drawer
+  function Nouser() {
+    return (
+      <>
+        <View style={{ height: 200, marginTop: 50, marginLeft: 10 }}>
+          <View style={{ position: "absolute", top: 150 }}>
+            <Pressable onPress={toggleModal}>
+              <Text style={{ color: "white", fontWeight: "bold" }}>
+                Log in / Create account
+              </Text>
+            </Pressable>
+          </View>
+        </View>
+        <View style={{ backgroundColor: "white", height: deviceHeight }}>
+          <View style={{ borderBottomWidth: 1, borderColor: "#DCDCDC" }}>
+            <View>
+              <Pressable
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingTop: 15,
+                  paddingLeft: 15,
+                }}
+              >
+                <SimpleLineIcons name="question" color="#FF1493" size={25} />
+                <Text style={{ paddingLeft: 30 }}>Help Center</Text>
+              </Pressable>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                paddingTop: 15,
+                paddingLeft: 15,
+                paddingBottom: 15,
+              }}
+            >
+              <AntDesign name="gift" color="#FF1493" size={25} />
+              <Text style={{ paddingLeft: 30 }}>Invite Friends</Text>
+            </View>
+          </View>
+          <View style={{ paddingTop: 15, paddingLeft: 15 }}>
+            <View>
+              <Text>Settings</Text>
+            </View>
+            <View style={{ paddingTop: 15 }}>
+              <Text>Terms & Conditions / Privacy</Text>
+            </View>
+          </View>
+        </View>
+      </>
+    );
+  }
 
-  // hide drawer
+  function LoginUser() {
+    return (
+      <>
+        <View style={{ height: 200, marginTop: 50, marginLeft: 10 }}>
+          <View style={{ position: "absolute", top: 150 }}>
+            <Text style={{ color: "white", fontWeight: "bold" }}>
+              {userDetails.map((items, index) => {
+                return items.name;
+              })}
+            </Text>
+          </View>
+        </View>
+        <View style={{ backgroundColor: "white", height: deviceHeight }}>
+          <View>
+            <View
+              style={{
+                paddingBottom: 15,
+                borderBottomWidth: 1,
+                borderColor: "#DCDCDC",
+              }}
+            >
+              <Text
+                style={{
+                  paddingLeft: 30,
+                  fontWeight: "bold",
+                  paddingTop: 15,
+                }}
+              >
+                foodpanda pay
+              </Text>
+              <Text
+                style={{
+                  paddingLeft: 30,
+                  paddingTop: 5,
+                }}
+              >
+                Balanace and payment methods
+              </Text>
+            </View>
+            <View>
+              <Pressable
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingTop: 15,
+                  paddingLeft: 15,
+                }}
+              >
+                <SimpleLineIcons name="question" color="#FF1493" size={25} />
+                <Text style={{ paddingLeft: 30 }}>Help Center</Text>
+              </Pressable>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                paddingTop: 15,
+                paddingLeft: 15,
+                paddingBottom: 15,
+              }}
+            >
+              <AntDesign name="gift" color="#FF1493" size={25} />
+              <Text style={{ paddingLeft: 30 }}>Invite Friends</Text>
+            </View>
+            <View>
+              <Pressable
+                onPress={() => {
+                  navigation.replace("UserProfile");
+                }}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingLeft: 15,
+                }}
+              >
+                <AntDesign name="profile" color="#FF1493" size={25} />
+                <Text style={{ paddingLeft: 30 }}>Profile</Text>
+              </Pressable>
+            </View>
+            <View>
+              <Pressable
+                onPress={() => logout()}
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  paddingTop: 15,
+                  paddingLeft: 15,
+                }}
+              >
+                <SimpleLineIcons name="logout" color="#FF1493" size={25} />
+                <Text style={{ paddingLeft: 30 }}>Logout</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </>
+    );
+  }
 
   const [showLocation, setshowLocation] = useState(false);
   function ShowMap() {
     setshowLocation(!showLocation);
-    console.log(showLocation);
-    //closeModal();
-    //navigation.navigate("GetCurrentLocation");
   }
 
   function HideMap() {
     setshowLocation(!showLocation);
-    console.log(showLocation);
   }
 
   function ShowCurrentLocation() {
@@ -297,6 +479,50 @@ export default function HeaderNav({ navigation }) {
 
   return (
     <>
+      <View>
+        <Modal
+          onBackdropPress={() => setloginModalVisible(false)}
+          style={{ margin: 0, position: "absolute", bottom: 0 }}
+          isVisible={loginModalVisible}
+        >
+          <View
+            style={{
+              backgroundColor: "white",
+              width: deviceWidth,
+              height: 250,
+            }}
+          >
+            <Text
+              style={{
+                color: "black",
+                fontWeight: "bold",
+                fontSize: 20,
+                paddingTop: 30,
+                paddingLeft: 30,
+              }}
+            >
+              Sign up or log in
+            </Text>
+            <Button
+              onPress={() => navigation.navigate("DrawerNav")}
+              containerStyle={{
+                width: 300,
+                marginHorizontal: 30,
+                marginVertical: 10,
+              }}
+              icon={
+                <MaterialIcons
+                  style={{ paddingRight: 15 }}
+                  name="email"
+                  size={15}
+                  color="white"
+                />
+              }
+              title="Continue with email"
+            />
+          </View>
+        </Modal>
+      </View>
       {/* Start of Modal */}
       <Animated.View
         style={[
@@ -313,6 +539,23 @@ export default function HeaderNav({ navigation }) {
           {showLocation ? ShowCurrentLocation() : HideCurrentLocation()}
         </View>
       </Animated.View>
+      <Modal
+        onBackdropPress={() => setModalVisible(false)}
+        style={{ margin: 0 }}
+        isVisible={modalVisible}
+        animationIn="slideInLeft"
+        animationOut="slideOutLeft"
+      >
+        <View
+          style={{
+            backgroundColor: "#FF1493",
+            height: deviceHeight,
+            width: 250,
+          }}
+        >
+          {token ? LoginUser() : Nouser()}
+        </View>
+      </Modal>
       {/* End of Modal */}
 
       {/* Start of Drawer */}
@@ -343,6 +586,7 @@ export default function HeaderNav({ navigation }) {
                     <>
                       <TouchableOpacity>
                         <MaterialCommunityIcons
+                          onPress={() => setModalVisible(true)}
                           name="menu"
                           color="#FF1493"
                           size={25}
